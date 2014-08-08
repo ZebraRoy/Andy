@@ -1,0 +1,33 @@
+.i-profile {
+    min-height: 319px;
+}
+
+.profile {
+    background: rgba(0, 0, 0, 0.3);
+    float: left;
+    padding: 6px;
+    width: 225px;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+.profile-pic {
+    border: 2px solid rgba(255,255,255,0.3);
+    border-radius: 4px;
+    margin-bottom: 5px;
+    width: 214px;
+    height: 214px;
+}
+
+.profile-icon {
+    margin-top: 3px;
+}
+
+.profile-misc {
+    width: 177px;
+}
+
+.profile-desc {
+    padding-left: 5px;
+    padding-right: 5px;
+}

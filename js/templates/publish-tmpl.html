@@ -1,0 +1,45 @@
+<h2>已出版作品</h2>
+<%
+var publishedKeys = _(published).keys();
+var publishedLength = publishedKeys.length;
+if (publishedLength > 0) {
+    for (var i = 0; i < publishedLength; i++) {
+        var publishedType = published[publishedKeys[i]];
+%>
+<h3><%- publishedType.title %></h3>
+<%
+        for (var j = 0; j < publishedType.books.length; j++) {
+            var book = publishedType.books[j];
+%>
+<div class="row">
+    <div class="col-lg-3">
+        <img class="publish-cover" alt="<%- book.name %>" src="<%- book.image %>">
+    </div>
+    <div class="col-lg-9">
+        <p><%- book.chapter %></p>
+        <p><%- book.name %></p>
+        <p><%- book.publishDate %></p>
+    </div>
+</div>
+<%
+        }
+    }
+}
+else {
+%>
+<p>暫無</p>
+<%
+}
+%>
+<h2>計劃出版作品</h2>
+<%
+var plannedKeys = _(planned).keys();
+var plannedLength = plannedKeys.length;
+if (plannedLength > 0) {
+}
+else {
+%>
+<p>暫無</p>
+<%
+}
+%>

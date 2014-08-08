@@ -1,0 +1,46 @@
+{
+    "published": {
+        "0": {
+            "title": "鮮鮮文化　輕小說奇想書系　《獵靈少女》系列",
+            "books": [
+                {
+                    "publishDate": "2013-12",
+                    "chapter": "第一集",
+                    "name": "<<魔王與最後的魔女>>",
+                    "image": "images/TheSoulHuntress/001.jpg"
+                },
+                {
+                    "publishDate": "2013-12",
+                    "chapter": "第二集",
+                    "name": "<<幼女廚師與柯羅諾斯>>",
+                    "image": "images/TheSoulHuntress/002.jpg"
+                },
+                {
+                    "publishDate": "2013-12",
+                    "chapter": "第三集",
+                    "name": "<<暗與午夜之影>>",
+                    "image": "images/TheSoulHuntress/003.jpg"
+                },
+                {
+                    "publishDate": "2013-12",
+                    "chapter": "第四集",
+                    "name": "<<無與少女軍團>> （完）",
+                    "image": "images/TheSoulHuntress/004.jpg"
+                }
+            ]
+        },
+        "1": {
+            "title": "香港小說會　作品合集　《香港小說跨媒體創作大獎》",
+            "books": [
+                {
+                    "publishDate": "2013-07",
+                    "chapter": "單本作品",
+                    "name": "《得獎及優秀作品集》",
+                    "image": "images/MediaCompetitionCollection/001.jpg"
+                }
+            ]
+        }
+    },
+    "planned": {
+    }
+}

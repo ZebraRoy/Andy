@@ -1,0 +1,79 @@
+<div class="row">
+    <div class="col-lg-9 i-profile">
+       <div class="profile">
+            <img class="profile-pic" src="images/profilePic.jpg" alt="黑霧">
+            <br>
+            <i class="fa fa-fw fa-user pull-left profile-icon"></i><span class="profile-misc pull-left"><%- name %></span>
+            <br>
+            <i class="fa fa-fw fa-coffee pull-left profile-icon"></i><span class="profile-misc pull-left"><%- hobby %></span>
+            <br>
+            <i class="fa fa-fw fa-pencil pull-left profile-icon"></i><span class="profile-misc pull-left"><%- type %></span>
+        </div>
+        <div class="profile-desc"><%- desc %></div>
+    </div>
+    <div class="col-lg-3">
+        <ul class="media-list promote">
+          <li class="media">
+            <div class="pull-left promote-icon">
+                <i class="fa fa-envelope"></i>
+            </div>
+            <div class="media-body">
+              <h4 class="media-heading">歡迎小說邀稿</h4>
+              andywong2010@gmail.com
+            </div>
+          </li>
+          <li class="media">
+            <div class="pull-left promote-icon promote-icon--facebook">
+                <i class="fa fa-facebook-square"></i>
+            </div>
+            <div class="media-body">
+              <h4 class="media-heading">可以來讚好ＦＢ專頁，追蹤黑霧的最新動態！</h4>
+              <iframe class="facebookLikeBox" src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Fwriter.blackmo&amp;width&amp;height=62&amp;colorscheme=dark&amp;show_faces=false&amp;header=false&amp;stream=false&amp;show_border=false&amp;appId=297394653666085" scrolling="no" frameborder="0" allowtransparency="true"></iframe>
+            </div>
+          </li>
+        </ul>
+    </div>
+</div>
+<div class="row award">
+    <div class="col-lg-12">
+        <div class="panel-group visible-xs-block" id="award">
+        <% for (var i = 0; i < awards.length; i++) { %>
+            <div class="panel">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#award" href="#award<%- i %>">
+                            <%- awards[i].name %> <span class="pull-right"><%- awards[i].year %></span>
+                        </a>
+                    </h4>
+                </div>
+                <div id="award<%- i %>" class="panel-collapse collapse">
+                    <div class="panel-body"><%- awards[i].award %></div>
+                </div>
+            </div>
+        <% } %>
+        </div>
+        <div class="hidden-xs">
+            <div class="panel">
+                <div class="panel-heading">獎頂</div>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>年份</th>
+                            <th>項目</th>
+                            <th>作品</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% for (var i = 0; i < awards.length; i++) { %>
+                            <tr>
+                                <td><%- awards[i].year %></td>
+                                <td><%- awards[i].award %></td>
+                                <td><%- awards[i].name %></td>
+                            </tr>
+                        <% } %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

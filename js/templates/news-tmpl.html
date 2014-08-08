@@ -1,0 +1,49 @@
+<h2>最新消息</h2>
+<div>
+    <table class="table">
+        <thead>
+            
+        </thead>
+        <tbody>
+            
+        </tbody>
+    </table>
+</div>
+<div class="row news">
+    <div class="col-lg-12">
+        <div class="panel-group visible-xs-block" id="news">
+        <% for (var i = 0; i < news.length; i++) { %>
+            <div class="panel">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#news" href="#news<%- i %>">
+                            <%- news[i].date %>
+                        </a>
+                    </h4>
+                </div>
+                <div id="news<%- i %>" class="panel-collapse collapse">
+                    <div class="panel-body"><%- news[i].content %></div>
+                </div>
+            </div>
+        <% } %>
+        </div>
+        <div class="hidden-xs">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>日期</th>
+                        <th>內容</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for (var i = 0; i < news.length; i++) { %>
+                    <tr>
+                        <td width="120"><%- news[i].date %></td>
+                        <td><%- news[i].content %></td>
+                    </tr>
+                    <% } %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

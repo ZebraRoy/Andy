@@ -1,0 +1,23 @@
+.promote {
+    
+    padding-top: 20px;
+    
+    .media-list {
+        margin-top: 20px;
+    }
+    
+    .facebookLikeBox {
+        height: 69px;
+    }
+}
+
+.promote-icon {
+    font-size: 41px;
+    width: 42px;
+    height: 59px;
+    line-height: 42px;
+    
+    &.promote-icon--facebook {
+        font-size: 47px;
+    }
+}

@@ -1,0 +1,105 @@
+@charset "UTF-8";
+body {
+  background: #3D3D3D;
+  color: white;
+  font-size: 16px;
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: '微軟正黑體', "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.news {
+  margin-top: 5px;
+}
+.news .panel {
+  border-radius: 0;
+  margin: 0;
+  background-color: #333;
+}
+.news .panel-heading {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 0px;
+}
+.news .panel-group .panel + .panel {
+  margin-top: 1px;
+}
+.news .panel-group .panel-heading + .panel-collapse .panel-body {
+  border-top-color: #333;
+}
+
+.i-profile {
+  min-height: 319px;
+}
+
+.profile {
+  background: rgba(0, 0, 0, 0.3);
+  float: left;
+  padding: 6px;
+  width: 225px;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.profile-pic {
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  margin-bottom: 5px;
+  width: 214px;
+  height: 214px;
+}
+
+.profile-icon {
+  margin-top: 3px;
+}
+
+.profile-misc {
+  width: 177px;
+}
+
+.profile-desc {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.promote {
+  padding-top: 20px;
+}
+.promote .media-list {
+  margin-top: 20px;
+}
+.promote .facebookLikeBox {
+  height: 69px;
+}
+
+.promote-icon {
+  font-size: 41px;
+  width: 42px;
+  height: 59px;
+  line-height: 42px;
+}
+.promote-icon.promote-icon--facebook {
+  font-size: 47px;
+}
+
+.award {
+  margin-top: 5px;
+}
+.award .panel {
+  border-radius: 0;
+  margin: 0;
+  background-color: #333;
+}
+.award .panel-heading {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 0px;
+}
+.award .panel-group .panel + .panel {
+  margin-top: 1px;
+}
+.award .panel-group .panel-heading + .panel-collapse .panel-body {
+  border-top-color: #333;
+}
+
+.publish-cover {
+  width: 100%;
+}
