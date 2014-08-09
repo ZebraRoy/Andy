@@ -11,14 +11,21 @@ if (publishedLength > 0) {
         for (var j = 0; j < publishedType.books.length; j++) {
             var book = publishedType.books[j];
 %>
-<div class="row">
-    <div class="col-lg-3">
-        <img class="publish-cover" alt="<%- book.name %>" src="<%- book.image %>">
-    </div>
-    <div class="col-lg-9">
-        <p><%- book.chapter %></p>
-        <p><%- book.name %></p>
-        <p><%- book.publishDate %></p>
+<div class="publish">
+    <div class="row">
+        <div class="col-sm-5">
+            <img class="publish-cover" alt="<%- book.name %>" src="<%- book.image %>">
+        </div>
+        <div class="col-sm-7">
+            <p>
+                <span class="publish-label">集數：</span><%- book.chapter %>
+                <br>
+                <span class="publish-label">書名：</span><%- book.name %>
+                <br>
+                <span class="publish-label">出版日期：</span><%- book.publishDate %>
+                </p>
+            <p><%= book.description %></p>
+        </div>
     </div>
 </div>
 <%
