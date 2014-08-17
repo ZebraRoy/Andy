@@ -27,11 +27,10 @@ body {
   border-top-color: #333;
 }
 
-.i-profile {
+.i-profile.desktop {
   min-height: 319px;
 }
-
-.profile {
+.i-profile.desktop .profile {
   background: rgba(0, 0, 0, 0.3);
   float: left;
   padding: 6px;
@@ -39,24 +38,51 @@ body {
   border-radius: 4px;
   margin-right: 10px;
 }
-
-.profile-pic {
+.i-profile.desktop .profile-pic {
   border: 2px solid rgba(255, 255, 255, 0.3);
   border-radius: 4px;
   margin-bottom: 5px;
   width: 214px;
   height: 214px;
 }
-
-.profile-icon {
+.i-profile.desktop .profile-icon {
   margin-top: 3px;
 }
-
-.profile-misc {
+.i-profile.desktop .profile-misc {
   width: 177px;
 }
+.i-profile.desktop .profile-desc {
+  padding-left: 5px;
+  padding-right: 5px;
+}
 
-.profile-desc {
+.i-profile.mobile {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 6px;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+.i-profile.mobile .i-profile-pic {
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  margin-bottom: 10px;
+  width: 214px;
+  height: 214px;
+  float: left;
+}
+.i-profile.mobile .i-profile-misc {
+  float: left;
+  width: 208px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+.i-profile.mobile .i-profile-misc .profile-icon {
+  margin-top: 3px;
+}
+.i-profile.mobile .i-profile-misc .profile-misc {
+  width: 177px;
+}
+.i-profile.mobile .profile-desc {
   padding-left: 5px;
   padding-right: 5px;
 }

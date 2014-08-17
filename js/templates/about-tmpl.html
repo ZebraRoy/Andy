@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-lg-9 i-profile">
+    <div class="col-lg-9 i-profile desktop hidden-xs">
        <div class="profile">
             <img class="profile-pic" src="images/profilePic.jpg" alt="黑霧">
             <br>
@@ -10,6 +10,26 @@
             <i class="fa fa-fw fa-pencil pull-left profile-icon"></i><span class="profile-misc pull-left"><%- type %></span>
         </div>
         <div class="profile-desc"><%- desc %></div>
+    </div>
+    <div class="col-lg-9 i-profile mobile visible-xs-block">
+        <div class="i-profile-pic">
+            <img class="profile-pic" src="images/profilePic.jpg" alt="黑霧">
+        </div>
+        <div class="i-profile-misc">
+            <div class="clearfix">
+                <i class="fa fa-fw fa-user pull-left profile-icon"></i><span class="profile-misc pull-left"><%- name %></span>
+            </div>
+            <div class="clearfix">
+                <i class="fa fa-fw fa-coffee pull-left profile-icon"></i><span class="profile-misc pull-left"><%- hobby %></span>
+            </div>
+            <div class="clearfix">
+                <i class="fa fa-fw fa-pencil pull-left profile-icon"></i><span class="profile-misc pull-left"><%- type %></span>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="profile-desc">
+            <%- desc %>
+        </div>
     </div>
     <div class="col-lg-3">
         <ul class="media-list promote">

@@ -1,33 +1,69 @@
-.i-profile {
+.i-profile.desktop {
+    
     min-height: 319px;
+    
+    .profile {
+        background: rgba(0, 0, 0, 0.3);
+        float: left;
+        padding: 6px;
+        width: 225px;
+        border-radius: 4px;
+        margin-right: 10px;
+    }
+
+    .profile-pic {
+        border: 2px solid rgba(255,255,255,0.3);
+        border-radius: 4px;
+        margin-bottom: 5px;
+        width: 214px;
+        height: 214px;
+    }
+
+    .profile-icon {
+        margin-top: 3px;
+    }
+
+    .profile-misc {
+        width: 177px;
+    }
+
+    .profile-desc {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
 }
 
-.profile {
+.i-profile.mobile {
     background: rgba(0, 0, 0, 0.3);
-    float: left;
     padding: 6px;
-    width: 225px;
     border-radius: 4px;
     margin-right: 10px;
-}
+    
+    .i-profile-pic {
+        border: 2px solid rgba(255,255,255,0.3);
+        border-radius: 4px;
+        margin-bottom: 10px;
+        width: 214px;
+        height: 214px;
+        float: left;
+    }
+    
+    .i-profile-misc {
+        float: left;
+        width: 208px;
+        margin-left: 10px;
+        margin-bottom: 10px;
+        .profile-icon {
+            margin-top: 3px;
+        }
 
-.profile-pic {
-    border: 2px solid rgba(255,255,255,0.3);
-    border-radius: 4px;
-    margin-bottom: 5px;
-    width: 214px;
-    height: 214px;
-}
-
-.profile-icon {
-    margin-top: 3px;
-}
-
-.profile-misc {
-    width: 177px;
-}
-
-.profile-desc {
-    padding-left: 5px;
-    padding-right: 5px;
+        .profile-misc {
+            width: 177px;
+        }
+    }
+    
+    .profile-desc {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
 }

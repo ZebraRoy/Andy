@@ -9,6 +9,7 @@ define([
         },
         routes: {
             "about": "onShowAbout",
+            "indexes": "onShowIndexes",
             "publish": "onShowPublish",
             "*actions": "onShowNews"
         },
@@ -26,6 +27,14 @@ define([
                 "views/about-view"
             ], function (AboutView) {
                 that.app.main.show(new AboutView());
+            });
+        },
+        onShowIndexes: function () {
+            var that = this;
+            require([
+                "views/indexes-view"
+            ], function (IndexesView) {
+                that.app.main.show(new IndexesView());
             });
         },
         onShowPublish: function () {
