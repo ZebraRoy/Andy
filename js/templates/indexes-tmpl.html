@@ -1,1 +1,61 @@
-<div></div>
+<h2>已完成</h2>
+<div class="indexes">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel-group visible-xs-block" id="indexes-publish">
+            <% for (var i = 0; i < finished.length; i++) { %>
+                <div class="panel">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#indexes-publish" href="#indexes-publish<%- i %>">
+                                <%- finished[i].year + ' ' + finished[i].name + ' ' + finished[i].type %>
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="indexes-publish<%- i %>" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            總集數：<%- finished[i].count %>本
+                            <br>
+                            出版社：<%- finished[i].publisher %>
+                            <br>
+                            合同　：<%- finished[i].contract %>
+                            <% if (finished[i].note != "" && finished[i].note != null) { %>
+                            <br>
+                            備注　：<%- finished[i].note %>
+                            <% } %>
+                        </div>
+                    </div>
+                </div>
+            <% } %>
+            </div>
+            <div class="hidden-xs">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>年份</th>
+                            <th>書名</th>
+                            <th>類型</th>
+                            <th>總集數</th>
+                            <th>出版社</th>
+                            <th>合約</th>
+                            <th>備注</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% for (var i = 0; i < finished.length; i++) { %>
+                        <tr>
+                            <td><%- finished[i].year %></td>
+                            <td><%- finished[i].name %></td>
+                            <td><%- finished[i].type %></td>
+                            <td><%- finished[i].count %></td>
+                            <td><%- finished[i].publisher %></td>
+                            <td><%- finished[i].contract %></td>
+                            <td><%- finished[i].note %></td>
+                        </tr>
+                        <% } %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

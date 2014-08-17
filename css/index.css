@@ -143,3 +143,22 @@ body {
   display: inline-block;
   width: 100px;
 }
+
+.indexes {
+  margin-top: 5px;
+}
+.indexes .panel {
+  border-radius: 0;
+  margin: 0;
+  background-color: #333;
+}
+.indexes .panel-heading {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 0px;
+}
+.indexes .panel-group .panel + .panel {
+  margin-top: 1px;
+}
+.indexes .panel-group .panel-heading + .panel-collapse .panel-body {
+  border-top-color: #333;
+}
