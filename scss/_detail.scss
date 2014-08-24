@@ -1,0 +1,40 @@
+.detail-label {
+    display: inline-block;
+    width: 100px;
+}
+
+.detail-slogan {
+    font-style: italic;
+    color: white;
+    border-color: white;
+    opacity: 0.7;
+}
+
+.detail-volumns {
+    padding-left: 0px;
+    list-style: none;
+}
+
+.detail-row {
+    margin-bottom: 5px;
+}
+
+.detail-label {
+    margin-bottom: 5px;
+}
+
+.detail-breadcrumb {
+    background: #222;
+    
+    .active {
+        color: white;
+    }
+    
+    a {
+        color: #777;
+        
+        &:hover {
+            color: white;
+        }
+    }
+}

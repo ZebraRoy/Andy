@@ -162,3 +162,41 @@ body {
 .indexes .panel-group .panel-heading + .panel-collapse .panel-body {
   border-top-color: #333;
 }
+
+.detail-label {
+  display: inline-block;
+  width: 100px;
+}
+
+.detail-slogan {
+  font-style: italic;
+  color: white;
+  border-color: white;
+  opacity: 0.7;
+}
+
+.detail-volumns {
+  padding-left: 0px;
+  list-style: none;
+}
+
+.detail-row {
+  margin-bottom: 5px;
+}
+
+.detail-label {
+  margin-bottom: 5px;
+}
+
+.detail-breadcrumb {
+  background: #222;
+}
+.detail-breadcrumb .active {
+  color: white;
+}
+.detail-breadcrumb a {
+  color: #777;
+}
+.detail-breadcrumb a:hover {
+  color: white;
+}

@@ -1,14 +1,37 @@
-<p>
-    <span class="publish-label">書名：</span><%- name %>
-    <br>
-    <span class="publish-label">年份：</span><%- year %>
-    <br>
-    <span class="publish-label">總集數：</span><%- volume %>
-    <br>
-    <span class="publish-label">狀態：</span><%- status %>
-    <br>
-    <span class="publish-label">合約：</span><%- contract %>
-    <br>
-    <%= description %>
-    <br>
-</p>
+<ol class="breadcrumb detail-breadcrumb">
+  <li><a href="#"><i class="fa fa-fw fa-home"></i></a></li>
+  <li><a href="#indexes">小說索引</a></li>
+  <li class="active"><%- name %></li>
+</ol>
+<div class="row detail-row">
+    <div class="col-md-1 detail-label">書名：</div>
+    <div class="col-md-10"><%- name %></div>
+</div>
+<div class="row detail-row">
+    <div class="col-md-1 detail-label">年份：</div>
+    <div class="col-md-10"><%- year %></div>
+</div>
+<div class="row detail-row">
+    <div class="col-md-1 detail-label">狀態：</div>
+    <div class="col-md-10"><%- status %></div>
+</div>
+<div class="row detail-row">
+    <div class="col-md-1 detail-label">合約：</div>
+    <div class="col-md-10"><%- contract %></div>
+</div>
+<div class="row detail-row">
+    <div class="col-md-1 detail-label">分冊：</div>
+    <div class="col-md-10">
+        <ul class="detail-volumns">
+        <% for (var i = 0; i < volumes.length; i++) { %>
+            <li><%- volumes[i] %></li>
+        <% } %>
+        </ul>
+    </div>
+</div>
+<br>
+<blockquote class="detail-slogan">
+  <p><%- slogan %></p>
+</blockquote>
+<%= description %>
+<br>
