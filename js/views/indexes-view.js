@@ -8,7 +8,9 @@ define([
     var IndexesView = Marionette.ItemView.extend({
         template: tmpl,
         serializeData: function () {
-            return indexesData;
+            return {
+                data: indexesData
+            };
         }
     });
     

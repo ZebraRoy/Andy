@@ -1,28 +1,38 @@
-<h2>已完成</h2>
+<p>如對以下未簽約作品感到興趣，並欲合作，歡迎來信詳談：andywong2010@gmail.com</p>
+<%
+var titles = ["已完結", "創作中", "投稿中", "暫緩"];
+var attributes = ["finished", "writing", "submiting", "pending"];
+for (var i = 0; i < titles.length; i++) {
+    var key = attributes[i];
+    var items = data[key];
+%>
+<h2><%- titles[i] %></h2>
 <div class="indexes">
     <div class="row">
         <div class="col-lg-12">
-            <div class="panel-group visible-xs-block" id="indexes-publish">
-            <% for (var i = 0; i < finished.length; i++) { %>
+            <div class="panel-group visible-xs-block" id="indexes-<%- key %>">
+            <% for (var j = 0; j < items.length; j++) { %>
                 <div class="panel">
                     <div class="panel-heading">
                         <h4 class="panel-title">
-                            <a data-toggle="collapse" data-parent="#indexes-publish" href="#indexes-publish<%- i %>">
-                                <%- finished[i].year + ' ' + finished[i].name + ' ' + finished[i].type %>
+                            <a data-toggle="collapse" data-parent="#indexes-<%- key %>" href="#indexes-<%- key + j %>">
+                                <%- items[j].year + ' ' + items[j].name + ' ' + items[j].type %>
                             </a>
                         </h4>
                     </div>
-                    <div id="indexes-publish<%- i %>" class="panel-collapse collapse">
+                    <div id="indexes-<%- key + j %>" class="panel-collapse collapse">
                         <div class="panel-body">
-                            總集數：<%- finished[i].count %>本
+                            總集數：<%- items[j].volume %>本
                             <br>
-                            出版社：<%- finished[i].publisher %>
+                            出版社：<%- items[j].publisher %>
                             <br>
-                            合同　：<%- finished[i].contract %>
-                            <% if (finished[i].note != "" && finished[i].note != null) { %>
+                            合同　：<%- items[j].contract %>
+                            <% if (items[j].note != "" && items[j].note != null) { %>
                             <br>
-                            備注　：<%- finished[i].note %>
+                            備注　：<%- items[j].note %>
                             <% } %>
+                            <br>
+                            <a href="#indexes/<%- items[j].name %>">詳細</a>
                         </div>
                     </div>
                 </div>
@@ -42,15 +52,15 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <% for (var i = 0; i < finished.length; i++) { %>
+                        <% for (var j = 0; j < items.length; j++) { %>
                         <tr>
-                            <td><%- finished[i].year %></td>
-                            <td><%- finished[i].name %></td>
-                            <td><%- finished[i].type %></td>
-                            <td><%- finished[i].count %></td>
-                            <td><%- finished[i].publisher %></td>
-                            <td><%- finished[i].contract %></td>
-                            <td><%- finished[i].note %></td>
+                            <td><%- items[j].year %></td>
+                            <td><a href="#indexes/<%- items[j].name %>"><%- items[j].name %></a></td>
+                            <td><%- items[j].type %></td>
+                            <td><%- items[j].volume %></td>
+                            <td><%- items[j].publisher %></td>
+                            <td><%- items[j].contract %></td>
+                            <td><%- items[j].note %></td>
                         </tr>
                         <% } %>
                     </tbody>
@@ -59,3 +69,4 @@
         </div>
     </div>
 </div>
+<% } %>
