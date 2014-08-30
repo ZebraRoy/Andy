@@ -162,16 +162,25 @@ body {
 .indexes .panel-group .panel-heading + .panel-collapse .panel-body {
   border-top-color: #333;
 }
+.indexes .table th,
+.indexes .table td {
+  text-align: center;
+}
 
 .detail-label {
   display: inline-block;
   width: 100px;
 }
 
+.detail-title {
+  text-align: center;
+  margin: auto;
+}
+
 .detail-slogan {
   font-style: italic;
-  color: white;
-  border-color: white;
+  color: #FF8C00;
+  border-color: #FF8C00;
   opacity: 0.7;
 }
 
