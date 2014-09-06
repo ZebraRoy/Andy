@@ -11,6 +11,9 @@ define([
             "about": "onShowAbout",
             "indexes": "onShowIndexes",
             "indexes/:name": "onShowNovelDetail",
+            "books": "onShowBook",
+            "books/:name": "onShowBookDetail",
+            "read/:name/:volume/:chapter": "onReadChapter",
             "publish": "onShowPublish",
             "*actions": "onShowNews"
         },
@@ -45,6 +48,24 @@ define([
             ], function (DetailView) {
                 that.app.main.show(new DetailView({
                     name: name
+                }));
+            });
+        },
+        onShowBook: function () {
+        },
+        onShowBookDetail: function () {
+        },
+        onReadChapter: function (name, volume, chapter) {
+            var that = this;
+            require([
+                "views/chapter-view",
+                "json!books/" + [name, volume, chapter].join("_") + ".json"
+            ], function (ChapterView, bookData) {
+                that.app.main.show(new ChapterView({
+                    name: name,
+                    volume: Number(volume),
+                    chapter: Number(chapter),
+                    content: bookData.content
                 }));
             });
         },

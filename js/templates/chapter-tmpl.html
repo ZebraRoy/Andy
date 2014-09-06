@@ -1,0 +1,8 @@
+<h2><%- chapterName %></h2>
+<p><%= content %></p>
+<% if (isNextChapter) { %>
+<a href="#read/<%- name + "/" + nextChapterVolume + "/" + nextChapter %>">點擊前往下一章</a>
+<% } %>
+<% if (isPreviousChapter) { %>
+<a href="#read/<%- name + "/" + previousChapterVolume + "/" + previousChapter %>">點擊前往上一章</a>
+<% } %>
