@@ -12,6 +12,16 @@
     <div class="col-md-1 detail-label">狀態：</div>
     <div class="col-md-10"><%- status %></div>
 </div>
+<% if (typeof artist != "undefined" && !!artist) { %>
+<div class="row detail-row">
+    <div class="col-md-1 detail-label">繪師：</div>
+    <div class="col-md-10"><%- artist %></div>
+</div>
+<% } %>
+<div class="row detail-row">
+    <div class="col-md-1 detail-label">類型：</div>
+    <div class="col-md-10"><%- type %></div>
+</div>
 <div class="row detail-row">
     <div class="col-md-1 detail-label">合約：</div>
     <div class="col-md-10"><%- contract %></div>

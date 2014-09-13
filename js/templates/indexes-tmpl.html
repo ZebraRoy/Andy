@@ -63,7 +63,13 @@ for (var i = 0; i < titles.length; i++) {
                         </tr>
                     </thead>
                     <tbody>
-                        <% for (var j = 0; j < items.length; j++) { %>
+                        <% 
+                        for (var j = 0; j < items.length; j++) { 
+                            var volumeValue = items[j].volume;
+                            if (!isFinished) {
+                                volumeValue = items[j].volume + " / " + items[j].expectedVolume;
+                            }
+                        %>
                         <tr>
                             <td><%- items[j].year %></td>
                             <td><a href="#indexes/<%- items[j].name %>"><%- items[j].name %></a></td>

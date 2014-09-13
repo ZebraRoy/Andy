@@ -8,6 +8,13 @@ define([
     
     var ChapterView = Marionette.ItemView.extend({
         template: tmpl,
+        initialize: function () {
+            this.$window = $(window);
+            this.toggleEvent("on");
+        },
+        toggleEvent: function (action) {
+            this.$window[action]("scroll", this.onScroll);
+        },
         serializeData: function () {
             var name = this.options.name;
             var volumeInfo =  _(bookData[name].volumes).findWhere({ volume: this.options.volume });
@@ -60,6 +67,22 @@ define([
                 previousChapter: previousChapter,
                 previousChapterVolume: previousChapterVolume
             }).extend(this.options);
+        },
+        onRender: function () {
+            $("body").scrollTop(0);
+        },
+        onScroll: _(function() {
+            var scrollTop = $(window).scrollTop();
+            var $navigation = $(".read-navigation");
+            if (scrollTop > 60) {
+                $navigation.addClass("-fixed");
+            }
+            else {
+                $navigation.removeClass("-fixed");
+            }
+        }).throttle(16),
+        onClose: function () {
+            this.toggleEvent("off");
         }
     });
     

@@ -65,14 +65,13 @@ define([
                     chapters.push(content);
                 });
                 
+                that.app.main.close();
                 that.app.main.show(new ChapterView({
                     name: name,
                     volume: Number(volume),
                     chapter: Number(chapter),
                     content: chapters[chapter]
                 }));
-                
-                $("body").scrollTop(0);
             });
         },
         onShowPublish: function () {
