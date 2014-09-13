@@ -1,8 +1,54 @@
-<h2><%- chapterName %></h2>
-<p><%= content %></p>
-<% if (isNextChapter) { %>
-<a href="#read/<%- name + "/" + nextChapterVolume + "/" + nextChapter %>">點擊前往下一章</a>
-<% } %>
-<% if (isPreviousChapter) { %>
-<a href="#read/<%- name + "/" + previousChapterVolume + "/" + previousChapter %>">點擊前往上一章</a>
-<% } %>
+
+<div class="row">
+    <div class="col-md-3">
+        <ul class="read-navigation">
+        <%
+            _(bookData).each(function (bookContent, bookName) {
+                var isActive = bookName == name;
+                if (isActive) {
+                    var children = ['<ul class="read-volume-navigation">'];
+                    _(bookContent.volumes).each(function (bookVolume) {
+                        var isVolumeActive = bookVolume.volume == volume;
+                        var volumeHref = "#read/" + bookName + "/" + bookVolume.volume + "/0";
+                        if (isVolumeActive) {
+                            var childrenVolume = ['<ul class="read-chapter-navigation">'];
+                            _(bookVolume.chapters).each(function (chapterName, i) {
+                                var isChapterActive = i == chapter;
+                                if (isChapterActive) {
+                                    childrenVolume.push('<li class="read-navigation-book-chapter"><a class="active" href="javascript:void(0)">' + chapterName + '</a></li>');
+                                }
+                                else {
+                                    childrenVolume.push('<li class="read-navigation-book-chapter"><a href="#read/' + bookName + '/' + bookVolume.volume + '/' + i + '">' + chapterName + '</a></li>');
+                                }
+                            });
+                            childrenVolume.push('</ul>');
+                            children.push('<li class="read-navigation-book-volume"><a class="active" href="javascript:void(0)">' + bookVolume.name + '</a>' + childrenVolume.join('') + '</li>');
+                        }
+                        else {
+                            children.push('<li class="read-navigation-book-volume"><a href="#read/' + bookName + '/' + bookVolume.volume + '/0">' + bookVolume.name + '</a></li>');
+                        }
+                    });
+                    children.push('</ul>');
+                    print('<li class="read-navigation-book-name"><a class="active" href="javascript:void(0)">' + bookName + '</a>' + children.join('') + '</li>');
+                    
+                }
+                else {
+                    print('<li class="read-navigation-book-name"><a href="#read/' + bookName + '/1/0">' + bookName + '</a></li>');
+                }
+           });
+        %>
+        </ul>
+    </div>
+    <div class="col-md-9">
+        <h2><%- chapterName %></h2>
+        <p><%= content %></p>
+        <% if (isNextChapter) { %>
+        <a class="read-url pull-left" href="#read/<%- name + "/" + nextChapterVolume + "/" + nextChapter %>">點擊前往下一章</a>
+        <% } %>
+        <% if (isPreviousChapter) { %>
+        <a class="read-url pull-right" href="#read/<%- name + "/" + previousChapterVolume + "/" + previousChapter %>">點擊前往上一章</a>
+        <% } %>
+        <div class="clearfix"></div>
+    </div>
+</div>
+

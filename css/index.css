@@ -209,3 +209,93 @@ body {
 .detail-breadcrumb a:hover {
   color: white;
 }
+
+.read-url {
+  color: #777;
+  font-size: 24px;
+}
+.read-url:hover {
+  color: white;
+}
+
+.read-navigation {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 20px;
+}
+
+.read-navigation-book-name > a {
+  display: block;
+  padding: 4px 20px;
+  font-weight: 500;
+  color: #777;
+  font-size: 16px;
+}
+.read-navigation-book-name > a.active, .read-navigation-book-name > a:hover {
+  font-weight: 700;
+  color: white;
+  background-color: transparent;
+  text-decoration: none;
+}
+.read-navigation-book-name > a:hover {
+  padding-right: 19px;
+  border-right: 1px solid white;
+}
+.read-navigation-book-name > a.active {
+  padding-right: 18px;
+  border-right: 2px solid white;
+}
+
+.read-volume-navigation,
+.read-chapter-navigation {
+  list-style: none;
+  padding-left: 0;
+}
+
+.read-volume-navigation {
+  padding-left: 10px;
+}
+
+.read-chapter-navigation {
+  padding-left: 20px;
+}
+
+.read-navigation-book-volume > a {
+  display: block;
+  padding: 4px 20px;
+  color: #777;
+  font-size: 14px;
+}
+.read-navigation-book-volume > a.active, .read-navigation-book-volume > a:hover {
+  color: white;
+  background-color: transparent;
+  text-decoration: none;
+}
+.read-navigation-book-volume > a:hover {
+  padding-right: 19px;
+  border-right: 1px solid white;
+}
+.read-navigation-book-volume > a.active {
+  padding-right: 18px;
+  border-right: 2px solid white;
+}
+
+.read-navigation-book-chapter > a {
+  display: block;
+  padding: 4px 20px;
+  color: #777;
+  font-size: 12px;
+}
+.read-navigation-book-chapter > a.active, .read-navigation-book-chapter > a:hover {
+  color: white;
+  background-color: transparent;
+  text-decoration: none;
+}
+.read-navigation-book-chapter > a:hover {
+  padding-right: 19px;
+  border-right: 1px solid white;
+}
+.read-navigation-book-chapter > a.active {
+  padding-right: 18px;
+  border-right: 2px solid white;
+}

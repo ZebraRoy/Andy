@@ -10,44 +10,54 @@ define([
         template: tmpl,
         serializeData: function () {
             var name = this.options.name;
-            var volumeInfo =  _(bookData[name].volumes).findWhere({ volume: this.options.volume })
-            var chapterName = _(volumeInfo.chapters)
-                .findWhere({ chapter: Number(this.options.chapter )})
-                .name;
+            var volumeInfo =  _(bookData[name].volumes).findWhere({ volume: this.options.volume });
+            var chapters = volumeInfo.chapters;
+            var chapterName = chapters[this.options.chapter]
             
             var nextChapterVolume = this.options.volume;
             var previousChapterVolume = this.options.volume;
             
-            var nextChapter = _(volumeInfo.chapters).findWhere({ chapter: this.options.chapter + 1 });
-            var previousChapter = _(volumeInfo.chapters).findWhere({ chapter: this.options.chapter - 1 });
+            var nextChapter;
+            var previousChapter;
             
-            if (!nextChapter) {
+            var isNextChapter = false;
+            var isPreviousChapter = false;
+            
+            if ((this.options.chapter + 1) < chapters.length) {
+                nextChapter = this.options.chapter + 1;
+                isNextChapter = true;
+            }
+            else {
                 var nextVolume = _(bookData[name].volumes).findWhere({ volume: this.options.volume + 1 });
                 if (nextVolume && nextVolume.chapters.length > 0) {
-                    nextChapter = nextVolume.chapters[0];
                     nextChapterVolume = this.options.volume + 1;
+                    nextChapter = 0;
+                    isNextChapter = true;
                 }
             }
             
-            if (!previousChapter) {
+            if (this.options.chapter - 1 >= 0) {
+                previousChapter = this.options.chapter - 1;
+                isPreviousChapter = true;
+            }
+            else {
                 var previousVolume = _(bookData[name].volumes).findWhere({ volume: this.options.volume - 1 });
                 if (previousVolume && previousVolume.chapters.length > 0) {
-                    previousChapter = previousVolume.chapters[0];
+                    previousChapter = 0;
                     previousChapterVolume = this.options.volume - 1;
+                    isPreviousChapter = true;
                 }
             }
-            
-            var isNextChapter = !!nextChapter;
-            var isPreviousChapter = !!previousChapter;
             
             return _({
                 _: _,
+                bookData: bookData,
                 chapterName: chapterName,
                 isNextChapter: isNextChapter,
                 isPreviousChapter: isPreviousChapter,
-                nextChapter: nextChapter ? nextChapter.chapter : 0,
+                nextChapter: nextChapter,
                 nextChapterVolume: nextChapterVolume,
-                previousChapter: previousChapter ? previousChapter.chapter : 0,
+                previousChapter: previousChapter,
                 previousChapterVolume: previousChapterVolume
             }).extend(this.options);
         }

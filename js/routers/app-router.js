@@ -11,8 +11,6 @@ define([
             "about": "onShowAbout",
             "indexes": "onShowIndexes",
             "indexes/:name": "onShowNovelDetail",
-            "books": "onShowBook",
-            "books/:name": "onShowBookDetail",
             "read/:name/:volume/:chapter": "onReadChapter",
             "publish": "onShowPublish",
             "*actions": "onShowNews"
@@ -51,22 +49,30 @@ define([
                 }));
             });
         },
-        onShowBook: function () {
-        },
-        onShowBookDetail: function () {
-        },
         onReadChapter: function (name, volume, chapter) {
             var that = this;
             require([
+                "jquery",
                 "views/chapter-view",
-                "json!books/" + [name, volume, chapter].join("_") + ".json"
-            ], function (ChapterView, bookData) {
+                "text!books/" + [name, volume].join("_") + ".xml"
+            ], function ($, ChapterView, bookData) {
+                var $xml = $($.parseXML(bookData));
+                var chapters = [];
+                $xml.find("CHAPTER").each(function () {
+                    var content = $(this).html();
+                    content = content.replace(/<!--\[CDATA\[/, "");
+                    content = content.replace(/\]\]>/, "");
+                    chapters.push(content);
+                });
+                
                 that.app.main.show(new ChapterView({
                     name: name,
                     volume: Number(volume),
                     chapter: Number(chapter),
-                    content: bookData.content
+                    content: chapters[chapter]
                 }));
+                
+                $("body").scrollTop(0);
             });
         },
         onShowPublish: function () {

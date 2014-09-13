@@ -25,6 +25,7 @@ define(function () {
             "wreqr": "libs/backbone/backbone.wreqr.min",
             "marionette": "libs/backbone/backbone.marionette.min",
             "bootstrap": "libs/bootstrap/bootstrap.min",
+            "xml2json": "libs/xml/xml2json",
             // short form 
             "enums": "config/enums",
             "config": "config/config",
@@ -69,6 +70,9 @@ define(function () {
                         return template;
                     };
                 }
+            },
+            "xml2json": {
+                exports: "xml2json"
             },
             "bootstrap": ["jquery"]
         },
