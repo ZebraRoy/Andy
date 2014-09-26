@@ -13,6 +13,8 @@ define([
             "indexes/:name": "onShowNovelDetail",
             "read/:name/:volume/:chapter": "onReadChapter",
             "publish": "onShowPublish",
+            "links": "onShowLinks",
+            "contact": "onShowContact",
             "*actions": "onShowNews"
         },
         onShowNews: function () {
@@ -80,6 +82,22 @@ define([
                 "views/publish-view"
             ], function (PublishView) {
                 that.app.main.show(new PublishView());
+            });
+        },
+        onShowLinks: function () {
+            var that = this;
+            require([
+                "views/links-view"
+            ], function (LinksView) {
+                that.app.main.show(new LinksView());
+            });
+        },
+        onShowContact: function () {
+            var that = this;
+            require([
+                "views/contact-view"
+            ], function (ContactView) {
+                that.app.main.show(new ContactView());
             });
         }
     });

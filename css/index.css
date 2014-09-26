@@ -304,3 +304,10 @@ body {
   padding-right: 18px;
   border-right: 2px solid white;
 }
+
+.links-block {
+  color: #777;
+}
+.links-block:hover {
+  color: white;
+}
