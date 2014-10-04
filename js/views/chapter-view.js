@@ -9,7 +9,7 @@ define([
     var ChapterView = Marionette.ItemView.extend({
         template: tmpl,
         events: {
-            "touchend [menu-trigger]": "onToggleMenu"
+            "click [menu-trigger]": "onToggleMenu"
         },
         initialize: function () {
             this.$window = $(window);
@@ -86,6 +86,7 @@ define([
         }).throttle(16),
         onToggleMenu: function () {
             this.$("footer").toggleClass("active");
+            this.$("[menu-trigger] .fa").toggleClass("fa-chevron-up fa-chevron-down");
         },
         onClose: function () {
             this.toggleEvent("off");
