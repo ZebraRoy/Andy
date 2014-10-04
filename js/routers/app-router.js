@@ -21,36 +21,44 @@ define([
         },
         onShowNews: function () {
             var that = this;
+            utils.blockUI();
             require([
                 "views/news-view"
             ], function (NewsView) {
+                utils.unblockUI();
                 $(".navbar-collapse.collapse").removeClass("in");
                 that.app.main.show(new NewsView());
             });
         },
         onShowAbout: function () {
             var that = this;
+            utils.blockUI();
             require([
                 "views/about-view"
             ], function (AboutView) {
+                utils.unblockUI();
                 $(".navbar-collapse.collapse").removeClass("in");
                 that.app.main.show(new AboutView());
             });
         },
         onShowIndexes: function () {
             var that = this;
+            utils.blockUI();
             require([
                 "views/indexes-view"
             ], function (IndexesView) {
+                utils.unblockUI();
                 $(".navbar-collapse.collapse").removeClass("in");
                 that.app.main.show(new IndexesView());
             });
         },
         onShowNovelDetail: function (name) {
             var that = this;
+            utils.blockUI();
             require([
                 "views/detail-view"
             ], function (DetailView) {
+                utils.unblockUI();
                 $(".navbar-collapse.collapse").removeClass("in");
                 that.app.main.show(new DetailView({
                     name: name
@@ -87,27 +95,33 @@ define([
         },
         onShowPublish: function () {
             var that = this;
+            utils.blockUI();
             require([
                 "views/publish-view"
             ], function (PublishView) {
+                utils.unblockUI();
                 $(".navbar-collapse.collapse").removeClass("in");
                 that.app.main.show(new PublishView());
             });
         },
         onShowLinks: function () {
             var that = this;
+            utils.blockUI();
             require([
                 "views/links-view"
             ], function (LinksView) {
+                utils.unblockUI();
                 $(".navbar-collapse.collapse").removeClass("in");
                 that.app.main.show(new LinksView());
             });
         },
         onShowContact: function () {
             var that = this;
+            utils.blockUI();
             require([
                 "views/contact-view"
             ], function (ContactView) {
+                utils.unblockUI();
                 $(".navbar-collapse.collapse").removeClass("in");
                 that.app.main.show(new ContactView());
             });
