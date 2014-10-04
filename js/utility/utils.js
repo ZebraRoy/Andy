@@ -3,6 +3,9 @@ define([
 ], function (_) {
     "use strict";
     
+    var overlay;
+    var blockTimer;
+    
     var utils = {
         isMobile: function () {
             var check = false;
@@ -15,7 +18,23 @@ define([
 				return 0;
 			}
 			return number;
-		}
+		},
+        blockUI: function () {
+            blockTimer = setTimeout(function () {
+                if (overlay) {
+                    overlay.remove();
+                }
+                overlay = $("<div class='overlay'><i class='fa fa-spinner overlay-image fa-spin'></i></div>").appendTo("body");
+            }, 0);
+        },
+        unblockUI: function () {
+            if (blockTimer) {
+                clearTimeout(blockTimer);
+            }
+            if (overlay) {
+                overlay.remove();
+            }
+        }
     };
     
     return utils;

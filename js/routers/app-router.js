@@ -1,6 +1,8 @@
 define([
-    "marionette"
-], function (Marionette) {
+    "marionette",
+    "jquery",
+    "utils"
+], function (Marionette, $, utils) {
     "use strict";
     
     var AppRouter = Marionette.AppRouter.extend({
@@ -22,6 +24,7 @@ define([
             require([
                 "views/news-view"
             ], function (NewsView) {
+                $(".navbar-collapse.collapse").removeClass("in");
                 that.app.main.show(new NewsView());
             });
         },
@@ -30,6 +33,7 @@ define([
             require([
                 "views/about-view"
             ], function (AboutView) {
+                $(".navbar-collapse.collapse").removeClass("in");
                 that.app.main.show(new AboutView());
             });
         },
@@ -38,6 +42,7 @@ define([
             require([
                 "views/indexes-view"
             ], function (IndexesView) {
+                $(".navbar-collapse.collapse").removeClass("in");
                 that.app.main.show(new IndexesView());
             });
         },
@@ -46,6 +51,7 @@ define([
             require([
                 "views/detail-view"
             ], function (DetailView) {
+                $(".navbar-collapse.collapse").removeClass("in");
                 that.app.main.show(new DetailView({
                     name: name
                 }));
@@ -53,11 +59,14 @@ define([
         },
         onReadChapter: function (name, volume, chapter) {
             var that = this;
+            utils.blockUI();
             require([
                 "jquery",
                 "views/chapter-view",
                 "text!books/" + [name, volume].join("_") + ".xml"
             ], function ($, ChapterView, bookData) {
+                utils.unblockUI();
+                $(".navbar-collapse.collapse").removeClass("in");
                 var $xml = $($.parseXML(bookData));
                 var chapters = [];
                 $xml.find("CHAPTER").each(function () {
@@ -81,6 +90,7 @@ define([
             require([
                 "views/publish-view"
             ], function (PublishView) {
+                $(".navbar-collapse.collapse").removeClass("in");
                 that.app.main.show(new PublishView());
             });
         },
@@ -89,6 +99,7 @@ define([
             require([
                 "views/links-view"
             ], function (LinksView) {
+                $(".navbar-collapse.collapse").removeClass("in");
                 that.app.main.show(new LinksView());
             });
         },
@@ -97,6 +108,7 @@ define([
             require([
                 "views/contact-view"
             ], function (ContactView) {
+                $(".navbar-collapse.collapse").removeClass("in");
                 that.app.main.show(new ContactView());
             });
         }
