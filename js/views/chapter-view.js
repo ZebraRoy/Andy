@@ -8,6 +8,9 @@ define([
     
     var ChapterView = Marionette.ItemView.extend({
         template: tmpl,
+        events: {
+            "touchend [menu-trigger]": "onToggleMenu"
+        },
         initialize: function () {
             this.$window = $(window);
             this.toggleEvent("on");
@@ -73,7 +76,7 @@ define([
         },
         onScroll: _(function() {
             var scrollTop = $(window).scrollTop();
-            var $navigation = $(".read-navigation");
+            var $navigation = $(".read-navigation.desktop");
             if (scrollTop > 60) {
                 $navigation.addClass("-fixed");
             }
@@ -81,6 +84,9 @@ define([
                 $navigation.removeClass("-fixed");
             }
         }).throttle(16),
+        onToggleMenu: function () {
+            this.$("footer").toggleClass("active");
+        },
         onClose: function () {
             this.toggleEvent("off");
         }

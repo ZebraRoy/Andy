@@ -210,6 +210,36 @@ body {
   color: white;
 }
 
+.read-container {
+  padding-bottom: 50px;
+}
+
+.read-footer {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  background-color: #222;
+  border-color: #080808;
+  height: 40px;
+  left: 0px;
+  display: block;
+}
+.read-footer.active {
+  height: 100%;
+  overflow: auto;
+}
+.read-footer.active .read-navigation {
+  display: block;
+}
+.read-footer .read-navigation {
+  display: none;
+}
+
+.read-trigger {
+  cursor: pointer;
+  padding: 10px;
+}
+
 .read-url {
   color: #777;
   font-size: 24px;
@@ -242,11 +272,11 @@ body {
   background-color: transparent;
   text-decoration: none;
 }
-.read-navigation-book-name > a:hover {
+.desktop .read-navigation-book-name > a:hover {
   padding-right: 19px;
   border-right: 1px solid white;
 }
-.read-navigation-book-name > a.active {
+.desktop .read-navigation-book-name > a.active {
   padding-right: 18px;
   border-right: 2px solid white;
 }
@@ -276,11 +306,11 @@ body {
   background-color: transparent;
   text-decoration: none;
 }
-.read-navigation-book-volume > a:hover {
+.desktop .read-navigation-book-volume > a:hover {
   padding-right: 19px;
   border-right: 1px solid white;
 }
-.read-navigation-book-volume > a.active {
+.desktop .read-navigation-book-volume > a.active {
   padding-right: 18px;
   border-right: 2px solid white;
 }
@@ -296,11 +326,11 @@ body {
   background-color: transparent;
   text-decoration: none;
 }
-.read-navigation-book-chapter > a:hover {
+.desktop .read-navigation-book-chapter > a:hover {
   padding-right: 19px;
   border-right: 1px solid white;
 }
-.read-navigation-book-chapter > a.active {
+.desktop .read-navigation-book-chapter > a.active {
   padding-right: 18px;
   border-right: 2px solid white;
 }

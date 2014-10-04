@@ -1,7 +1,6 @@
-
-<div class="row">
-    <div class="col-md-3">
-        <ul class="read-navigation">
+<div class="row read-container">
+    <div class="col-sm-3 hidden-xs">
+        <ul class="read-navigation desktop">
         <%
             _(bookData).each(function (bookContent, bookName) {
                 var isActive = bookName == name;
@@ -39,7 +38,7 @@
         %>
         </ul>
     </div>
-    <div class="col-md-9">
+    <div class="col-sm-9">
         <h2><%- chapterName %></h2>
         <p><%= content %></p>
         <% if (isNextChapter) { %>
@@ -51,4 +50,46 @@
         <div class="clearfix"></div>
     </div>
 </div>
+<footer class="read-footer visible-xs-block">
+    <div class="read-trigger" menu-trigger>
+        目錄<i class="fa fa-fw fa-chevron-up"></i>
+    </div>
+    <ul class="read-navigation">
+    <%
+        _(bookData).each(function (bookContent, bookName) {
+            var isActive = bookName == name;
+            if (isActive) {
+                var children = ['<ul class="read-volume-navigation">'];
+                _(bookContent.volumes).each(function (bookVolume) {
+                    var isVolumeActive = bookVolume.volume == volume;
+                    var volumeHref = "#read/" + bookName + "/" + bookVolume.volume + "/0";
+                    if (isVolumeActive) {
+                        var childrenVolume = ['<ul class="read-chapter-navigation">'];
+                        _(bookVolume.chapters).each(function (chapterName, i) {
+                            var isChapterActive = i == chapter;
+                            if (isChapterActive) {
+                                childrenVolume.push('<li class="read-navigation-book-chapter"><a class="active" href="javascript:void(0)">' + chapterName + '</a></li>');
+                            }
+                            else {
+                                childrenVolume.push('<li class="read-navigation-book-chapter"><a href="#read/' + bookName + '/' + bookVolume.volume + '/' + i + '">' + chapterName + '</a></li>');
+                            }
+                        });
+                        childrenVolume.push('</ul>');
+                        children.push('<li class="read-navigation-book-volume"><a class="active" href="javascript:void(0)">' + bookVolume.name + '</a>' + childrenVolume.join('') + '</li>');
+                    }
+                    else {
+                        children.push('<li class="read-navigation-book-volume"><a href="#read/' + bookName + '/' + bookVolume.volume + '/0">' + bookVolume.name + '</a></li>');
+                    }
+                });
+                children.push('</ul>');
+                print('<li class="read-navigation-book-name"><a class="active" href="javascript:void(0)">' + bookName + '</a>' + children.join('') + '</li>');
+
+            }
+            else {
+                print('<li class="read-navigation-book-name"><a href="#read/' + bookName + '/1/0">' + bookName + '</a></li>');
+            }
+       });
+    %>
+    </ul>
+</footer>
 
