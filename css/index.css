@@ -253,11 +253,6 @@ body {
   padding-left: 0;
   margin-top: 20px;
 }
-.read-navigation.-fixed {
-  position: fixed;
-  margin-top: 0;
-  top: 30px;
-}
 
 .read-navigation-book-name > a {
   display: block;

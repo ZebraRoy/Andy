@@ -11,13 +11,6 @@ define([
         events: {
             "click [menu-trigger]": "onToggleMenu"
         },
-        initialize: function () {
-            this.$window = $(window);
-            this.toggleEvent("on");
-        },
-        toggleEvent: function (action) {
-            this.$window[action]("scroll", this.onScroll);
-        },
         serializeData: function () {
             var name = this.options.name;
             var volumeInfo =  _(bookData[name].volumes).findWhere({ volume: this.options.volume });
@@ -74,22 +67,9 @@ define([
         onRender: function () {
             $("body").scrollTop(0);
         },
-        onScroll: _(function() {
-            var scrollTop = $(window).scrollTop();
-            var $navigation = $(".read-navigation.desktop");
-            if (scrollTop > 60) {
-                $navigation.addClass("-fixed");
-            }
-            else {
-                $navigation.removeClass("-fixed");
-            }
-        }).throttle(16),
         onToggleMenu: function () {
             this.$("footer").toggleClass("active");
             this.$("[menu-trigger] .fa").toggleClass("fa-chevron-up fa-chevron-down");
-        },
-        onClose: function () {
-            this.toggleEvent("off");
         }
     });
     
