@@ -77,8 +77,8 @@ define([
                 $(".navbar-collapse.collapse").removeClass("in");
                 var $xml = $($.parseXML(bookData));
                 var chapters = [];
-                $xml.find("CHAPTER").each(function () {
-                    var content = $(this).html();
+                $xml.find("CHAPTER,chapter").each(function () {
+                    var content = $(this).text() || '';
                     content = content.replace(/<!--\[CDATA\[/, "");
                     content = content.replace(/\]\]>/, "");
                     chapters.push(content);
